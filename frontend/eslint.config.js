@@ -27,9 +27,13 @@ export default defineConfig([
   },
   {
     files: ['**/__tests__/*.js', '**/*.test.js'],
-    env: {
-      jest: true,
-      node: true
+    languageOptions: {
+      globals: {
+        jest: 'readonly',
+        describe: 'readonly',
+        test: 'readonly',
+        expect: 'readonly'
+      }
     }
   }
 ])
